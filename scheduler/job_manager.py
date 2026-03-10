@@ -1,5 +1,6 @@
 import json
 import logging
+import uuid
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
@@ -31,3 +32,12 @@ def partition_dataset(file_path: str, chunk_size: int) -> list[str]:
 
     logger.info("Partitioned %d records into %d chunks", len(records), len(chunk_files))
     return chunk_files
+
+
+def create_tasks(job_id: str, chunk_files: list[str]) -> list[dict]:
+    tasks = [
+        {"task_id": str(uuid.uuid4()), "job_id": job_id, "chunk_path": chunk_path}
+        for chunk_path in chunk_files
+    ]
+    logger.info("Created %d tasks for job %s", len(tasks), job_id)
+    return tasks
