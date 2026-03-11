@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 from scheduler.config import config
 from scheduler.job_manager import create_tasks, partition_dataset
-from scheduler.redis_client import enqueue_task
+from scheduler.redis_client import dequeue_task, enqueue_task, mark_task_complete, mark_task_running
 
 logging.basicConfig(
     level=logging.INFO,
@@ -35,6 +35,23 @@ def submit_job(request: JobRequest) -> dict:
         enqueue_task(task)
 
     return {"job_id": job_id, "tasks_created": len(tasks)}
+
+
+@app.get("/task")
+def get_task() -> dict:
+    task = dequeue_task()
+    if task is None:
+        return {"task": None}
+    mark_task_running(task["task_id"])
+    logger.info("Assigned task %s to worker", task["task_id"])
+    return {"task": task}
+
+
+@app.post("/task/{task_id}/complete")
+def complete_task(task_id: str) -> dict:
+    mark_task_complete(task_id)
+    logger.info("Task %s reported complete", task_id)
+    return {"status": "ok"}
 
 
 @app.get("/health")
