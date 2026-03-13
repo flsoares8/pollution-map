@@ -7,7 +7,16 @@ from pydantic import BaseModel
 
 from scheduler.config import config
 from scheduler.job_manager import create_tasks, partition_dataset
-from scheduler.redis_client import dequeue_task, enqueue_task, mark_task_complete, mark_task_running
+from scheduler.redis_client import (
+    all_tasks_complete,
+    dequeue_task,
+    enqueue_task,
+    get_job_task_ids,
+    get_task_job_id,
+    mark_task_complete,
+    mark_task_running,
+    register_job,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -34,6 +43,8 @@ def submit_job(request: JobRequest) -> dict:
     for task in tasks:
         enqueue_task(task)
 
+    register_job(job_id, [t["task_id"] for t in tasks])
+
     return {"job_id": job_id, "tasks_created": len(tasks)}
 
 
@@ -51,6 +62,19 @@ def get_task() -> dict:
 def complete_task(task_id: str) -> dict:
     mark_task_complete(task_id)
     logger.info("Task %s reported complete", task_id)
+
+    job_id = get_task_job_id(task_id)
+    if job_id and all_tasks_complete(job_id):
+        logger.info("All tasks complete for job %s, enqueueing reduce task", job_id)
+        task_ids = get_job_task_ids(job_id)
+        reduce_task = {
+            "task_id": str(uuid.uuid4()),
+            "job_id": job_id,
+            "type": "reduce",
+            "task_ids": task_ids,
+        }
+        enqueue_task(reduce_task)
+
     return {"status": "ok"}
 
 

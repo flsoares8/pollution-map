@@ -45,3 +45,32 @@ def mark_task_complete(task_id: str) -> None:
     client.srem(RUNNING_TASKS_KEY, task_id)
     client.sadd(COMPLETED_TASKS_KEY, task_id)
     logger.info("Task %s marked as complete", task_id)
+
+
+def register_job(job_id: str, task_ids: list[str]) -> None:
+    client = get_client()
+    pipe = client.pipeline()
+    for task_id in task_ids:
+        pipe.sadd(f"job:{job_id}:tasks", task_id)
+        pipe.set(f"task:{task_id}:job", job_id)
+    pipe.execute()
+    logger.info("Registered job %s with %d tasks", job_id, len(task_ids))
+
+
+def get_task_job_id(task_id: str) -> Optional[str]:
+    client = get_client()
+    return client.get(f"task:{task_id}:job")
+
+
+def get_job_task_ids(job_id: str) -> list[str]:
+    client = get_client()
+    return list(client.smembers(f"job:{job_id}:tasks"))
+
+
+def all_tasks_complete(job_id: str) -> bool:
+    client = get_client()
+    task_ids = client.smembers(f"job:{job_id}:tasks")
+    if not task_ids:
+        return False
+    completed = client.smembers(COMPLETED_TASKS_KEY)
+    return task_ids.issubset(completed)
