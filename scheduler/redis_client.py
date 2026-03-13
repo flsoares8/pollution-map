@@ -1,5 +1,6 @@
 import json
 import logging
+import time
 from typing import Optional
 
 import redis
@@ -12,6 +13,7 @@ TASK_QUEUE_KEY = "task_queue"
 RUNNING_TASKS_KEY = "running_tasks"
 COMPLETED_TASKS_KEY = "completed_tasks"
 WORKERS_KEY = "workers"
+WORKER_ACTIVE_TTL = 15  # seconds without heartbeat before considered inactive
 
 
 def get_client() -> redis.Redis:
@@ -65,6 +67,25 @@ def get_task_job_id(task_id: str) -> Optional[str]:
 def get_job_task_ids(job_id: str) -> list[str]:
     client = get_client()
     return list(client.smembers(f"job:{job_id}:tasks"))
+
+
+def update_worker_heartbeat(worker_id: str, timestamp: float) -> None:
+    client = get_client()
+    client.zadd(WORKERS_KEY, {worker_id: timestamp})
+    logger.debug("Heartbeat received from worker %s", worker_id)
+
+
+def get_metrics() -> dict:
+    client = get_client()
+    active_since = time.time() - WORKER_ACTIVE_TTL
+    active_workers = client.zcount(WORKERS_KEY, active_since, "+inf")
+    tasks_pending = client.llen(TASK_QUEUE_KEY)
+    tasks_running = client.scard(RUNNING_TASKS_KEY)
+    return {
+        "active_workers": active_workers,
+        "tasks_pending": tasks_pending,
+        "tasks_running": tasks_running,
+    }
 
 
 def all_tasks_complete(job_id: str) -> bool:
