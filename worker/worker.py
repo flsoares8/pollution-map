@@ -1,10 +1,12 @@
 import logging
 import os
 import time
+import uuid
 
 import requests
 
 from worker.executor import execute_task
+from worker.heartbeat import start as start_heartbeat
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,7 +19,9 @@ POLL_INTERVAL = float(os.getenv("POLL_INTERVAL", "1.0"))
 
 
 def run() -> None:
-    logger.info("Worker started")
+    worker_id = str(uuid.uuid4())
+    logger.info("Worker started with id %s", worker_id)
+    start_heartbeat(worker_id, SCHEDULER_URL)
     while True:
         response = requests.get(f"{SCHEDULER_URL}/task")
         response.raise_for_status()
