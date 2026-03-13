@@ -12,10 +12,12 @@ from scheduler.redis_client import (
     dequeue_task,
     enqueue_task,
     get_job_task_ids,
+    get_metrics,
     get_task_job_id,
     mark_task_complete,
     mark_task_running,
     register_job,
+    update_worker_heartbeat,
 )
 
 logging.basicConfig(
@@ -30,6 +32,11 @@ app = FastAPI(title="ChunkFlow Scheduler")
 class JobRequest(BaseModel):
     dataset_path: str
     chunk_size: int
+
+
+class HeartbeatRequest(BaseModel):
+    worker_id: str
+    timestamp: float
 
 
 @app.post("/submit_job")
@@ -76,6 +83,17 @@ def complete_task(task_id: str) -> dict:
         enqueue_task(reduce_task)
 
     return {"status": "ok"}
+
+
+@app.post("/heartbeat")
+def heartbeat(request: HeartbeatRequest) -> dict:
+    update_worker_heartbeat(request.worker_id, request.timestamp)
+    return {"status": "ok"}
+
+
+@app.get("/metrics")
+def metrics() -> dict:
+    return get_metrics()
 
 
 @app.get("/health")
