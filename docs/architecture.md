@@ -87,12 +87,14 @@ After each task completion, the scheduler checks whether all tasks for the job a
 
 ```mermaid
 flowchart TD
+    Dataset[(dataset/)] -->|dataset_path + chunk_size| Client
     Client -->|POST /submit_job| Scheduler
-    Scheduler -->|partition| Dataset[(dataset/)]
+    Scheduler -->|partition into chunks| Chunks[(dataset/chunks)]
 
     subgraph Phase 1 - Feature Extraction
         Scheduler -->|enqueue feature tasks| Redis[(Redis)]
         Redis -->|poll tasks| Workers[Workers]
+        Workers -->|read chunks| Chunks
         Workers -->|write results| Output[(output/)]
         Workers -->|POST /heartbeat| Scheduler
         Workers -->|POST /task/complete| Scheduler
