@@ -88,24 +88,19 @@ After each task completion, the scheduler checks whether all tasks for the job a
 ```mermaid
 flowchart TD
     Client -->|POST /submit_job| Scheduler
+    Scheduler -->|partition| Dataset[(dataset/)]
 
-    Scheduler -->|partition dataset| Dataset[(dataset/)]
-    Scheduler -->|enqueue tasks| Redis[(Redis)]
+    subgraph Phase 1 - Feature Extraction
+        Scheduler -->|enqueue feature tasks| Redis[(Redis)]
+        Redis -->|poll tasks| Workers[Workers]
+        Workers -->|write results| Output[(output/)]
+        Workers -->|POST /heartbeat| Scheduler
+        Workers -->|POST /task/complete| Scheduler
+    end
 
-    Redis -->|GET /task| Worker1
-    Redis -->|GET /task| Worker2
-
-    Worker1 -->|feature_extraction| Output[(output/)]
-    Worker2 -->|feature_extraction| Output
-
-    Worker1 -->|POST /task/complete| Scheduler
-    Worker2 -->|POST /task/complete| Scheduler
-
-    Scheduler -->|enqueue reduce task| Redis
-    Redis -->|GET /task| Worker1
-
-    Worker1 -->|reduce| FinalDataset[(output/final_features_dataset.json)]
-
-    Worker1 -->|POST /heartbeat| Scheduler
-    Worker2 -->|POST /heartbeat| Scheduler
+    subgraph Phase 2 - Reduce
+        Scheduler -->|enqueue reduce task| Redis
+        Redis -->|poll task| Reducer[Worker]
+        Reducer -->|merge results| FinalDataset[(final_features_dataset.json)]
+    end
 ```
