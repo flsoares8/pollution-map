@@ -5,7 +5,8 @@ ChunkFlow is a distributed dataset processing pipeline designed to execute featu
 The system uses a scheduler-worker architecture with chunk-based dataset partitioning and Redis-backed task coordination.
 
 ## Architecture
-![alt text](mermaid-diagram.png)
+
+See [Architecture](docs/architecture.md) for the full system diagram and component descriptions.
 
 ## Project Goals
 
