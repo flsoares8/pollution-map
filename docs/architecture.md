@@ -91,7 +91,7 @@ flowchart TD
     Client -->|submit_job| Scheduler
     Scheduler -->|partition| Chunks[(chunks)]
 
-    subgraph Phase 1 - Feature Extraction
+    subgraph Phase 1 - Extraction
         Scheduler -->|enqueue tasks| Redis[(Redis)]
         Redis -->|poll| Workers[Workers]
         Workers -->|read| Chunks
