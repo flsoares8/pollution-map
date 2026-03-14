@@ -100,7 +100,7 @@ flowchart TD
         Workers -->|complete| Scheduler
     end
 
-    subgraph Phase 2 - Reduce
+    subgraph Phase 2 - Aggregation
         Scheduler -->|enqueue reduce| Redis
         Redis -->|poll| Reducer[Worker]
         Reducer -->|merge| FinalDataset[(final_dataset.json)]
