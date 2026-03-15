@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 SCHEDULER_URL="http://localhost:8000"
 DATASET_PATH="dataset/sample_dataset.json"
