@@ -1,9 +1,1002 @@
 [
-  {"id": 1, "name": "Alice", "value": 10},
-  {"id": 2, "name": "Bob", "value": 20},
-  {"id": 3, "name": "Charlie", "value": 30},
-  {"id": 4, "name": "Diana", "value": 40},
-  {"id": 5, "name": "Eve", "value": 50},
-  {"id": 6, "name": "Frank", "value": 60},
-  {"id": 7, "name": "Grace", "value": 70}
+  {
+    "user_id": "u_001",
+    "session_id": "s_334053",
+    "clicks": 7,
+    "session_time": 144,
+    "page_views": 6,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_002",
+    "session_id": "s_131244",
+    "clicks": 23,
+    "session_time": 588,
+    "page_views": 19,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_003",
+    "session_id": "s_308496",
+    "clicks": 130,
+    "session_time": 268,
+    "page_views": 20,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_004",
+    "session_id": "s_948749",
+    "clicks": 57,
+    "session_time": 459,
+    "page_views": 15,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_005",
+    "session_id": "s_900581",
+    "clicks": 88,
+    "session_time": 462,
+    "page_views": 9,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_006",
+    "session_id": "s_460663",
+    "clicks": 49,
+    "session_time": 124,
+    "page_views": 4,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_007",
+    "session_id": "s_496922",
+    "clicks": 59,
+    "session_time": 74,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_008",
+    "session_id": "s_172933",
+    "clicks": 93,
+    "session_time": 330,
+    "page_views": 19,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_009",
+    "session_id": "s_498591",
+    "clicks": 21,
+    "session_time": 326,
+    "page_views": 8,
+    "purchases": 1,
+    "device": "desktop",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_010",
+    "session_id": "s_802729",
+    "clicks": 42,
+    "session_time": 403,
+    "page_views": 12,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_011",
+    "session_id": "s_584714",
+    "clicks": 137,
+    "session_time": 205,
+    "page_views": 24,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_012",
+    "session_id": "s_905635",
+    "clicks": 57,
+    "session_time": 600,
+    "page_views": 22,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_013",
+    "session_id": "s_169403",
+    "clicks": 52,
+    "session_time": 62,
+    "page_views": 11,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_014",
+    "session_id": "s_774079",
+    "clicks": 55,
+    "session_time": 352,
+    "page_views": 21,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_015",
+    "session_id": "s_665158",
+    "clicks": 36,
+    "session_time": 301,
+    "page_views": 8,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_016",
+    "session_id": "s_245051",
+    "clicks": 150,
+    "session_time": 468,
+    "page_views": 13,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_017",
+    "session_id": "s_260265",
+    "clicks": 97,
+    "session_time": 123,
+    "page_views": 2,
+    "purchases": 1,
+    "device": "tablet",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_018",
+    "session_id": "s_590785",
+    "clicks": 17,
+    "session_time": 462,
+    "page_views": 13,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_019",
+    "session_id": "s_814825",
+    "clicks": 3,
+    "session_time": 596,
+    "page_views": 3,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_020",
+    "session_id": "s_575763",
+    "clicks": 29,
+    "session_time": 378,
+    "page_views": 10,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_021",
+    "session_id": "s_755674",
+    "clicks": 46,
+    "session_time": 542,
+    "page_views": 17,
+    "purchases": 1,
+    "device": "desktop",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_022",
+    "session_id": "s_665579",
+    "clicks": 40,
+    "session_time": 233,
+    "page_views": 12,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "US"
+  },
+  {
+    "user_id": "u_023",
+    "session_id": "s_480612",
+    "clicks": 126,
+    "session_time": 361,
+    "page_views": 1,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_024",
+    "session_id": "s_182582",
+    "clicks": 31,
+    "session_time": 89,
+    "page_views": 29,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_025",
+    "session_id": "s_234628",
+    "clicks": 98,
+    "session_time": 100,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_026",
+    "session_id": "s_736059",
+    "clicks": 43,
+    "session_time": 592,
+    "page_views": 9,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_027",
+    "session_id": "s_804314",
+    "clicks": 52,
+    "session_time": 582,
+    "page_views": 23,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_028",
+    "session_id": "s_335612",
+    "clicks": 133,
+    "session_time": 478,
+    "page_views": 15,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_029",
+    "session_id": "s_330914",
+    "clicks": 38,
+    "session_time": 51,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_030",
+    "session_id": "s_446479",
+    "clicks": 30,
+    "session_time": 90,
+    "page_views": 3,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_031",
+    "session_id": "s_665427",
+    "clicks": 72,
+    "session_time": 273,
+    "page_views": 22,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_032",
+    "session_id": "s_526833",
+    "clicks": 63,
+    "session_time": 514,
+    "page_views": 26,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_033",
+    "session_id": "s_589710",
+    "clicks": 111,
+    "session_time": 129,
+    "page_views": 12,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "US"
+  },
+  {
+    "user_id": "u_034",
+    "session_id": "s_939482",
+    "clicks": 16,
+    "session_time": 130,
+    "page_views": 13,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_035",
+    "session_id": "s_542374",
+    "clicks": 49,
+    "session_time": 226,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_036",
+    "session_id": "s_564656",
+    "clicks": 64,
+    "session_time": 503,
+    "page_views": 28,
+    "purchases": 1,
+    "device": "tablet",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_037",
+    "session_id": "s_197793",
+    "clicks": 70,
+    "session_time": 81,
+    "page_views": 27,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_038",
+    "session_id": "s_520521",
+    "clicks": 125,
+    "session_time": 446,
+    "page_views": 16,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_039",
+    "session_id": "s_922157",
+    "clicks": 1,
+    "session_time": 418,
+    "page_views": 1,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_040",
+    "session_id": "s_262316",
+    "clicks": 143,
+    "session_time": 463,
+    "page_views": 22,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_041",
+    "session_id": "s_163918",
+    "clicks": 15,
+    "session_time": 252,
+    "page_views": 10,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_042",
+    "session_id": "s_994141",
+    "clicks": 7,
+    "session_time": 88,
+    "page_views": 5,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_043",
+    "session_id": "s_171849",
+    "clicks": 66,
+    "session_time": 88,
+    "page_views": 3,
+    "purchases": 1,
+    "device": "tablet",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_044",
+    "session_id": "s_697347",
+    "clicks": 104,
+    "session_time": 270,
+    "page_views": 4,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_045",
+    "session_id": "s_692683",
+    "clicks": 11,
+    "session_time": 70,
+    "page_views": 7,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_046",
+    "session_id": "s_350280",
+    "clicks": 53,
+    "session_time": 297,
+    "page_views": 22,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_047",
+    "session_id": "s_888387",
+    "clicks": 77,
+    "session_time": 164,
+    "page_views": 15,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "US"
+  },
+  {
+    "user_id": "u_048",
+    "session_id": "s_323508",
+    "clicks": 145,
+    "session_time": 499,
+    "page_views": 4,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_049",
+    "session_id": "s_356150",
+    "clicks": 90,
+    "session_time": 165,
+    "page_views": 29,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_050",
+    "session_id": "s_417212",
+    "clicks": 113,
+    "session_time": 191,
+    "page_views": 27,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_051",
+    "session_id": "s_208618",
+    "clicks": 36,
+    "session_time": 38,
+    "page_views": 10,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_052",
+    "session_id": "s_385577",
+    "clicks": 28,
+    "session_time": 148,
+    "page_views": 24,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_053",
+    "session_id": "s_994343",
+    "clicks": 88,
+    "session_time": 245,
+    "page_views": 7,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_054",
+    "session_id": "s_153266",
+    "clicks": 65,
+    "session_time": 530,
+    "page_views": 29,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_055",
+    "session_id": "s_237174",
+    "clicks": 12,
+    "session_time": 313,
+    "page_views": 1,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "BR"
+  },
+  {
+    "user_id": "u_056",
+    "session_id": "s_688153",
+    "clicks": 114,
+    "session_time": 195,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_057",
+    "session_id": "s_137778",
+    "clicks": 89,
+    "session_time": 107,
+    "page_views": 29,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_058",
+    "session_id": "s_423232",
+    "clicks": 38,
+    "session_time": 595,
+    "page_views": 14,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "US"
+  },
+  {
+    "user_id": "u_059",
+    "session_id": "s_207786",
+    "clicks": 54,
+    "session_time": 396,
+    "page_views": 22,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_060",
+    "session_id": "s_270395",
+    "clicks": 40,
+    "session_time": 446,
+    "page_views": 30,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_061",
+    "session_id": "s_920391",
+    "clicks": 12,
+    "session_time": 55,
+    "page_views": 12,
+    "purchases": 1,
+    "device": "desktop",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_062",
+    "session_id": "s_501124",
+    "clicks": 41,
+    "session_time": 303,
+    "page_views": 26,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_063",
+    "session_id": "s_466643",
+    "clicks": 52,
+    "session_time": 257,
+    "page_views": 27,
+    "purchases": 1,
+    "device": "desktop",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_064",
+    "session_id": "s_444207",
+    "clicks": 7,
+    "session_time": 258,
+    "page_views": 6,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_065",
+    "session_id": "s_812526",
+    "clicks": 90,
+    "session_time": 315,
+    "page_views": 21,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_066",
+    "session_id": "s_378361",
+    "clicks": 8,
+    "session_time": 58,
+    "page_views": 5,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_067",
+    "session_id": "s_557592",
+    "clicks": 89,
+    "session_time": 474,
+    "page_views": 24,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_068",
+    "session_id": "s_367095",
+    "clicks": 99,
+    "session_time": 148,
+    "page_views": 29,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_069",
+    "session_id": "s_173372",
+    "clicks": 17,
+    "session_time": 31,
+    "page_views": 7,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_070",
+    "session_id": "s_631756",
+    "clicks": 32,
+    "session_time": 351,
+    "page_views": 24,
+    "purchases": 1,
+    "device": "desktop",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_071",
+    "session_id": "s_233470",
+    "clicks": 104,
+    "session_time": 364,
+    "page_views": 23,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_072",
+    "session_id": "s_525800",
+    "clicks": 45,
+    "session_time": 418,
+    "page_views": 20,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "US"
+  },
+  {
+    "user_id": "u_073",
+    "session_id": "s_708158",
+    "clicks": 74,
+    "session_time": 341,
+    "page_views": 7,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "CA"
+  },
+  {
+    "user_id": "u_074",
+    "session_id": "s_636004",
+    "clicks": 114,
+    "session_time": 506,
+    "page_views": 15,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_075",
+    "session_id": "s_749342",
+    "clicks": 37,
+    "session_time": 116,
+    "page_views": 17,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_076",
+    "session_id": "s_254511",
+    "clicks": 80,
+    "session_time": 270,
+    "page_views": 8,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "US"
+  },
+  {
+    "user_id": "u_077",
+    "session_id": "s_176365",
+    "clicks": 122,
+    "session_time": 280,
+    "page_views": 20,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_078",
+    "session_id": "s_254739",
+    "clicks": 99,
+    "session_time": 229,
+    "page_views": 16,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "US"
+  },
+  {
+    "user_id": "u_079",
+    "session_id": "s_829716",
+    "clicks": 109,
+    "session_time": 139,
+    "page_views": 8,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_080",
+    "session_id": "s_227253",
+    "clicks": 72,
+    "session_time": 81,
+    "page_views": 8,
+    "purchases": 1,
+    "device": "desktop",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_081",
+    "session_id": "s_891937",
+    "clicks": 136,
+    "session_time": 505,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_082",
+    "session_id": "s_567574",
+    "clicks": 110,
+    "session_time": 546,
+    "page_views": 27,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_083",
+    "session_id": "s_768636",
+    "clicks": 67,
+    "session_time": 490,
+    "page_views": 25,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_084",
+    "session_id": "s_848206",
+    "clicks": 62,
+    "session_time": 526,
+    "page_views": 9,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "FR"
+  },
+  {
+    "user_id": "u_085",
+    "session_id": "s_184491",
+    "clicks": 86,
+    "session_time": 308,
+    "page_views": 11,
+    "purchases": 1,
+    "device": "mobile",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_086",
+    "session_id": "s_324345",
+    "clicks": 99,
+    "session_time": 266,
+    "page_views": 23,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_087",
+    "session_id": "s_165290",
+    "clicks": 85,
+    "session_time": 447,
+    "page_views": 18,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_088",
+    "session_id": "s_902784",
+    "clicks": 150,
+    "session_time": 428,
+    "page_views": 23,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_089",
+    "session_id": "s_508930",
+    "clicks": 2,
+    "session_time": 518,
+    "page_views": 2,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_090",
+    "session_id": "s_557007",
+    "clicks": 57,
+    "session_time": 589,
+    "page_views": 16,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "US"
+  },
+  {
+    "user_id": "u_091",
+    "session_id": "s_523956",
+    "clicks": 87,
+    "session_time": 428,
+    "page_views": 22,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_092",
+    "session_id": "s_513160",
+    "clicks": 33,
+    "session_time": 508,
+    "page_views": 20,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "MX"
+  },
+  {
+    "user_id": "u_093",
+    "session_id": "s_584125",
+    "clicks": 6,
+    "session_time": 57,
+    "page_views": 6,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "US"
+  },
+  {
+    "user_id": "u_094",
+    "session_id": "s_442722",
+    "clicks": 98,
+    "session_time": 296,
+    "page_views": 11,
+    "purchases": 0,
+    "device": "desktop",
+    "country": "AU"
+  },
+  {
+    "user_id": "u_095",
+    "session_id": "s_593152",
+    "clicks": 108,
+    "session_time": 314,
+    "page_views": 9,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "JP"
+  },
+  {
+    "user_id": "u_096",
+    "session_id": "s_919182",
+    "clicks": 45,
+    "session_time": 83,
+    "page_views": 8,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "US"
+  },
+  {
+    "user_id": "u_097",
+    "session_id": "s_121369",
+    "clicks": 61,
+    "session_time": 61,
+    "page_views": 8,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "DE"
+  },
+  {
+    "user_id": "u_098",
+    "session_id": "s_691364",
+    "clicks": 33,
+    "session_time": 274,
+    "page_views": 16,
+    "purchases": 0,
+    "device": "mobile",
+    "country": "IN"
+  },
+  {
+    "user_id": "u_099",
+    "session_id": "s_884256",
+    "clicks": 95,
+    "session_time": 292,
+    "page_views": 6,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "UK"
+  },
+  {
+    "user_id": "u_100",
+    "session_id": "s_427110",
+    "clicks": 80,
+    "session_time": 197,
+    "page_views": 4,
+    "purchases": 0,
+    "device": "tablet",
+    "country": "AU"
+  }
 ]

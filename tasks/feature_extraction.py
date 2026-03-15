@@ -9,12 +9,18 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "output")
 
 
 def extract_features(record: dict) -> dict:
-    value = record["value"]
+    clicks = record["clicks"]
+    session_time = record["session_time"]
+    page_views = record["page_views"]
+    purchases = record["purchases"]
+
     return {
-        "id": record["id"],
+        "user_id": record["user_id"],
+        "session_id": record["session_id"],
         "features": {
-            "value_normalized": round(value / 100, 4),
-            "value_squared": value ** 2,
+            "click_rate": round(clicks / session_time, 4) if session_time > 0 else 0,
+            "engagement_score": round(page_views / session_time, 4) if session_time > 0 else 0,
+            "conversion": 1 if purchases > 0 else 0,
         },
     }
 

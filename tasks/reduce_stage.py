@@ -19,7 +19,7 @@ def run(task: dict) -> None:
         merged.extend(records)
         logger.info("Reduce: loaded %d records from %s", len(records), path)
 
-    merged.sort(key=lambda r: r["id"])
+    merged.sort(key=lambda r: r["user_id"])
 
     final_path = output_dir / "final_features_dataset.json"
     final_path.write_text(json.dumps(merged, indent=2))
