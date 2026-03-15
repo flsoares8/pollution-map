@@ -32,12 +32,16 @@ def run() -> None:
             continue
 
         task_id = task["task_id"]
-        logger.info("Task received: %s", task_id)
+        task_type = task["type"]
+        logger.info("[%s] Task received: %s (type: %s)", worker_id, task_id, task_type)
 
-        execute_task(task)
-
-        requests.post(f"{SCHEDULER_URL}/task/{task_id}/complete").raise_for_status()
-        logger.info("Task completed: %s", task_id)
+        try:
+            logger.info("[%s] Processing task: %s", worker_id, task_id)
+            execute_task(task)
+            requests.post(f"{SCHEDULER_URL}/task/{task_id}/complete").raise_for_status()
+            logger.info("[%s] Task completed: %s", worker_id, task_id)
+        except Exception as e:
+            logger.error("[%s] Task failed: %s — %s", worker_id, task_id, e)
 
 
 if __name__ == "__main__":
