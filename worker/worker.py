@@ -23,7 +23,7 @@ def run() -> None:
     logger.info("Worker started with id %s", worker_id)
     start_heartbeat(worker_id, SCHEDULER_URL)
     while True:
-        response = requests.get(f"{SCHEDULER_URL}/task")
+        response = requests.get(f"{SCHEDULER_URL}/task", timeout=10)
         response.raise_for_status()
         task = response.json().get("task")
 
@@ -38,7 +38,7 @@ def run() -> None:
         try:
             logger.info("[%s] Processing task: %s", worker_id, task_id)
             execute_task(task)
-            requests.post(f"{SCHEDULER_URL}/task/{task_id}/complete").raise_for_status()
+            requests.post(f"{SCHEDULER_URL}/task/{task_id}/complete", timeout=10).raise_for_status()
             logger.info("[%s] Task completed: %s", worker_id, task_id)
         except Exception as e:
             logger.error("[%s] Task failed: %s — %s", worker_id, task_id, e)

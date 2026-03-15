@@ -17,6 +17,7 @@ def submit_job(dataset_path: str, chunk_size: int) -> dict:
     response = requests.post(
         f"{SCHEDULER_URL}/submit_job",
         json={"dataset_path": dataset_path, "chunk_size": chunk_size},
+        timeout=30,
     )
     response.raise_for_status()
     return response.json()

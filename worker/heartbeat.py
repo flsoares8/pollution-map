@@ -16,6 +16,7 @@ def _send_heartbeats(worker_id: str, scheduler_url: str) -> None:
             requests.post(
                 f"{scheduler_url}/heartbeat",
                 json={"worker_id": worker_id, "timestamp": time.time()},
+                timeout=5,
             ).raise_for_status()
             logger.debug("Heartbeat sent for worker %s", worker_id)
         except Exception as e:
