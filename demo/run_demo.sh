@@ -48,7 +48,7 @@ while true; do
     sleep 2
 done
 
-echo "All tasks complete. Final datset written to output/final_features_dataset.json"
+echo "All tasks complete. Final dataset written to output/final_features_dataset.json"
 
 echo "Preview of results:"
 python3 -c "
