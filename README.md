@@ -1,8 +1,8 @@
 # ChunkFlow
 
-ChunkFlow is a distributed dataset processing pipeline that executes feature extraction workloads across multiple worker nodes. It demonstrates core distributed systems concepts including task scheduling, worker coordination, chunk-based data partitioning, and result aggregation.
+ChunkFlow is a distributed dataset processing pipeline designed to execute feature extraction workloads across multiple worker nodes. It demonstrates core distributed systems concepts including task scheduling, worker coordination, chunk-based data partitioning, and result aggregation.
 
-The system follows a scheduler-worker architecture inspired by Apache Spark and Ray, using Redis as a coordination layer for task distribution and state tracking.
+The system follows a simple scheduler-worker architecture inspired by concepts used in distributed computing frameworks such as Apache Spark and Ray, using Redis as a coordination layer for task distribution and state tracking.
 
 ## Architecture
 
