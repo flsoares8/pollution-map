@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 TASK_QUEUE_KEY = "task_queue"
 RUNNING_TASKS_KEY = "running_tasks"
 COMPLETED_TASKS_KEY = "completed_tasks"
+FAILED_TASKS_KEY = "failed_tasks"
 WORKERS_KEY = "workers"
 WORKER_ACTIVE_TTL = 15  # seconds without heartbeat before considered inactive
 
@@ -71,10 +72,25 @@ def get_metrics() -> dict:
     }
 
 
-def all_tasks_complete(job_id: str) -> bool:
+def mark_task_failed(task_id: str) -> None:
+    client = get_client()
+    client.srem(RUNNING_TASKS_KEY, task_id)
+    client.sadd(FAILED_TASKS_KEY, task_id)
+    logger.info("Task %s marked as failed", task_id)
+
+
+def all_tasks_finished(job_id: str) -> bool:
     client = get_client()
     task_ids = client.smembers(f"job:{job_id}:tasks")
     if not task_ids:
         return False
     completed = client.smembers(COMPLETED_TASKS_KEY)
-    return task_ids.issubset(completed)
+    failed = client.smembers(FAILED_TASKS_KEY)
+    return task_ids.issubset(completed | failed)
+
+
+def any_task_failed(job_id: str) -> bool:
+    client = get_client()
+    task_ids = client.smembers(f"job:{job_id}:tasks")
+    failed = client.smembers(FAILED_TASKS_KEY)
+    return bool(task_ids & failed)

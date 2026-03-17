@@ -42,6 +42,7 @@ def run() -> None:
             logger.info("[%s] Task completed: %s", worker_id, task_id)
         except Exception as e:
             logger.error("[%s] Task failed: %s — %s", worker_id, task_id, e)
+            requests.post(f"{SCHEDULER_URL}/task/{task_id}/fail", timeout=10)
 
 
 if __name__ == "__main__":
